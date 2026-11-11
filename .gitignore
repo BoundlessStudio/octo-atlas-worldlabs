@@ -1,0 +1,7 @@
+node_modules/
+.env
+runs/
+# raw API downloads the viewer does not need (web copies are kept)
+viewer/data/**/*.img
+viewer/data/**/*.png
+viewer/data/04/raw/

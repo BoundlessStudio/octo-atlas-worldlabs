@@ -1,0 +1,18 @@
+{
+  "name": "octo-atlas-worldlabs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "End-to-end tour of the World Labs Atlas Developer API: text → image → posed RGBD → new views → camera path → edit → restyle → Gaussian splat → mesh.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "pipeline": "node --env-file=.env pipeline/run.mjs",
+    "viewer": "node viewer/serve.mjs"
+  },
+  "dependencies": {
+    "@sparkjsdev/spark": "^2.4.0",
+    "@worldlabsai/client": "^0.7.0",
+    "sharp": "^0.35.5",
+    "three": "^0.187.0"
+  }
+}

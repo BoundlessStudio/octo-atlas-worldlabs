@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas World Tour</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    { "imports": {
+        "three": "/node_modules/three/build/three.module.js",
+        "three/addons/": "/node_modules/three/examples/jsm/",
+        "@sparkjsdev/spark": "/node_modules/@sparkjsdev/spark/dist/spark.module.js"
+    } }
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <p class="kicker">World Labs Atlas · Developer API · end-to-end tour</p>
+    <h1 id="title">Atlas World Tour</h1>
+    <p class="lede">One sentence of text became this place. Seven Atlas tasks turned it into an image, a camera and depth map,
+      new viewpoints, a camera move, an edit, a restyle, a Gaussian splat and a game-ready mesh — everything below was produced by the API.</p>
+    <ol class="chain" id="chain"></ol>
+  </header>
+
+  <section class="stage-wrap" id="world">
+    <div class="stage" id="stage">
+      <canvas id="gl"></canvas>
+      <div class="stage-top">
+        <div class="seg" id="modes" role="tablist" aria-label="3D layer"></div>
+        <div class="seg">
+          <button id="tog-cams" aria-pressed="true" title="Show the cameras Atlas rendered from">Cameras</button>
+          <button id="tog-coll" aria-pressed="false" title="Show collider boxes from splats2Mesh">Colliders</button>
+        </div>
+      </div>
+      <div class="stage-bottom">
+        <p id="stage-note"></p>
+        <div class="seg">
+          <button id="fly">▶ Fly the camera path</button>
+          <button id="home">Reset view</button>
+        </div>
+      </div>
+      <div class="loading" id="loading" hidden></div>
+    </div>
+    <p class="hint">Drag to orbit · scroll to zoom · right-drag to pan · click any view below to stand where Atlas stood.</p>
+  </section>
+
+  <main id="steps"></main>
+
+  <footer>
+    <p>Rebuild this world with your own idea: edit <code>scene.config.mjs</code>, then <code>npm run pipeline -- --fresh</code>.
+      Docs: <a href="https://docs.atlas.worldlabs.ai/how-to-use-atlas">How to use Atlas</a>.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
